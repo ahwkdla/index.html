@@ -7,7 +7,6 @@
     * { box-sizing: border-box; }
     body { margin: 0; font-family: "Malgun Gothic", sans-serif; background: #1e1e2f; color: #f0f0f0; display: flex; flex-direction: column; align-items: center; min-height: 100vh; }
     
-    /* 화면에 보여줄 페이지 제어 */
     .page { max-width: 480px; width: 100%; padding: 40px 24px 100px; text-align: center; display: none; }
     .page.active { display: block; }
 
@@ -20,8 +19,8 @@
     img { max-width: 100%; border-radius: 12px; margin-top: 16px; }
     
     .nav { position: fixed; bottom: 0; left: 0; right: 0; display: flex; justify-content: center; gap: 16px; padding: 16px; background: #14141f; }
-    .nav button { border: none; cursor: pointer; color: #1e1e2f; background: #ffd166; padding: 12px 24px; border-radius: 30px; font-weight: bold; font-size: 1rem; transition: transform 0.15s ease; }
-    .nav button:hover { transform: scale(1.05); }
+    .nav a { text-decoration: none; color: #1e1e2f; background: #ffd166; padding: 12px 24px; border-radius: 30px; font-weight: bold; font-size: 1rem; transition: transform 0.15s ease; cursor: pointer; }
+    .nav a:hover { transform: scale(1.05); }
   </style>
 </head>
 <body>
@@ -35,7 +34,7 @@
     <p>취미는 <mark>게임 그림</mark> 이고</p>
     <p>좋아하는건 <strong>야구</strong> <strong>에스파</strong> 입니다</p>
     <div class="nav">
-      <button onclick="showPage(2)">다음 ▶</button>
+      <a href="#page2" onclick="showPage(2)">다음 ▶</a>
     </div>
   </div>
 
@@ -47,8 +46,8 @@
     <hr>
     <h4>또 집에서 유튜브 보기 체육 배구 풋살 좋아하고 과학 좋아합니다.</h4>
     <div class="nav">
-      <button onclick="showPage(1)">◀ 이전</button>
-      <button onclick="showPage(3)">다음 ▶</button>
+      <a href="#page1" onclick="showPage(1)">◀ 이전</a>
+      <a href="#page3" onclick="showPage(3)">다음 ▶</a>
     </div>
   </div>
 
@@ -59,8 +58,8 @@
     <h4>특징&nbsp;:&nbsp;특징은 착하다 장난이많다 재밌다 정도?</h4>
     <img src="https://ilovecharacter.com/news/data/20230403/p1065586446301593_269_thum.jpg" alt="이미지">
     <div class="nav">
-      <button onclick="showPage(2)">◀ 이전</button>
-      <button onclick="showPage(1)">처음으로 ↺</button>
+      <a href="#page2" onclick="showPage(2)">◀ 이전</a>
+      <a href="#page1" onclick="showPage(1)">처음으로 ↺</a>
     </div>
   </div>
 
