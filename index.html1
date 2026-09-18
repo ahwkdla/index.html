@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>자기소개 - 페이지 3</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Malgun Gothic", sans-serif;
+      background: #1e1e2f;
+      color: #f0f0f0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .page {
+      max-width: 480px;
+      width: 100%;
+      padding: 40px 24px 100px;
+      text-align: center;
+    }
+    h3 { font-size: 1.5rem; color: #ffd166; }
+    mark { background: #ff6b6b; color: #1e1e2f; padding: 0 4px; border-radius: 4px; }
+    hr { border: none; border-top: 2px solid #444466; margin: 20px 0; }
+    p { line-height: 1.6; }
+    .nav {
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      padding: 16px;
+      background: #14141f;
+    }
+    .nav a {
+      text-decoration: none;
+      color: #1e1e2f;
+      background: #ffd166;
+      padding: 12px 24px;
+      border-radius: 30px;
+      font-weight: bold;
+      transition: transform 0.15s ease;
+    }
+    .nav a:hover { transform: scale(1.05); }
+    .page-indicator { color: #888; font-size: 0.9rem; margin-top: 4px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <h3>이름&nbsp;:&nbsp;이선우</h3>
+    <hr>
+    <p>
+      취미는
+      <mark>게임 그림</mark>
+      이고
+    </p>
+    <p>좋아하는건 <strong>야구</strong> <strong>에스파</strong> 입니다</p>
+    <p class="page-indicator">2 / 4 &middot; 페이지 3</p>
+  </div>
+
+  <div class="nav">
+    <a href="main.html">◀ 이전</a>
+    <a href="page2.html">다음 ▶</a>
+  </div>
+</body>
+</html>
