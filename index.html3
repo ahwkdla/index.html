@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
   <meta charset="utf-8">
-  <title>자기소개 - 페이지 1</title>
+  <title>자기소개 - 페이지 2</title>
   <style>
     * { box-sizing: border-box; }
     body {
@@ -21,12 +21,8 @@
       padding: 40px 24px 100px;
       text-align: center;
     }
-    h4 { font-size: 1.2rem; color: #ffd166; }
-    img {
-      max-width: 100%;
-      border-radius: 12px;
-      margin-top: 16px;
-    }
+    h4 { font-size: 1.2rem; line-height: 1.6; color: #ffd166; }
+    hr { border: none; border-top: 2px solid #444466; margin: 20px 0; }
     .nav {
       position: fixed;
       bottom: 0; left: 0; right: 0;
@@ -51,14 +47,21 @@
 </head>
 <body>
   <div class="page">
-    <h4>특징&nbsp;:&nbsp;특징은 착하다 장난이많다 재밌다 정도?</h4>
-    <img src="https://ilovecharacter.com/news/data/20230403/p1065586446301593_269_thum.jpg" alt="이미지">
-    <p class="page-indicator">4 / 4 &middot; 페이지 1</p>
+    <h4>
+      야구를 좋아하는 이유가 공을 던질때의 속도가 있어서이고
+      에스파는 아이돌 입니다 뮤비 또는 노래 듣는걸 좋아합니다.
+    </h4>
+    <hr>
+    <h4>
+      또 집에서 유튜브 보기
+      체육 배구 풋살 좋아하고 과학 좋아합니다.
+    </h4>
+    <p class="page-indicator">3 / 4 &middot; 페이지 2</p>
   </div>
 
   <div class="nav">
-    <a href="page2.html">◀ 이전</a>
-    <a href="main.html">처음으로 ▶</a>
+    <a href="page3.html">◀ 이전</a>
+    <a href="page1.html">다음 ▶</a>
   </div>
 </body>
 </html>
