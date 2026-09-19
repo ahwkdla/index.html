@@ -2,70 +2,84 @@
 <html lang="ko">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>자기소개 - 메인</title>
-  <style>
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: "Malgun Gothic", sans-serif;
-      background: #1e1e2f;
-      color: #f0f0f0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      min-height: 100vh;
-    }
-    .page {
-      max-width: 480px;
-      width: 100%;
-      padding: 40px 24px 100px;
-      text-align: center;
-    }
-    h1 {
-      font-size: 2rem;
-      color: #ffd166;
-      margin-bottom: 8px;
-    }
-    hr {
-      border: none;
-      border-top: 2px solid #444466;
-      margin: 20px 0;
-    }
-    p { line-height: 1.6; }
-    .nav {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      display: flex;
-      justify-content: center;
-      gap: 16px;
-      padding: 16px;
-      background: #14141f;
-    }
-    .nav a {
-      text-decoration: none;
-      color: #1e1e2f;
-      background: #ffd166;
-      padding: 12px 24px;
-      border-radius: 30px;
-      font-weight: bold;
-      transition: transform 0.15s ease;
-    }
-    .nav a:hover { transform: scale(1.05); }
-    .page-indicator { color: #888; font-size: 0.9rem; margin-top: 4px; }
-  </style>
-</head>
-<body>
-  <div class="page">
-    <h1>자기소개</h1>
-    <p>안녕하세요! 저의 이야기를 소개할게요.</p>
-    <hr>
-    <p class="page-indicator">1 / 4 &middot; 메인</p>
-  </div>
 
-  <div class="nav">
-    <a href="page1.html">다음 ▶</a>
-  </div>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-indigo-950 text-white">
+
+  <!-- 메인 영역 -->
+  <main class="min-h-screen flex items-center justify-center px-6 pb-28">
+
+    <div class="w-full max-w-lg text-center">
+
+      <!-- 작은 상단 문구 -->
+      <p class="mb-4 text-sm font-semibold tracking-[0.3em] text-yellow-300 uppercase">
+        MY STORY
+      </p>
+
+      <!-- 제목 -->
+      <h1 class="text-5xl font-extrabold tracking-tight
+                 bg-gradient-to-r from-yellow-300 to-amber-500
+                 bg-clip-text text-transparent">
+        자기소개
+      </h1>
+
+      <!-- 설명 -->
+      <p class="mt-6 text-lg leading-8 text-slate-300">
+        안녕하세요!<br>
+        저의 이야기를 소개할게요.
+      </p>
+
+      <!-- 구분선 -->
+      <div class="my-8 h-px bg-gradient-to-r
+                  from-transparent via-slate-500 to-transparent">
+      </div>
+
+      <!-- 페이지 표시 -->
+      <p class="text-sm text-slate-400">
+        <span class="font-semibold text-yellow-300">1</span>
+        <span class="mx-1">/</span>
+        4
+        <span class="mx-2">·</span>
+        메인
+      </p>
+
+    </div>
+
+  </main>
+
+  <!-- 하단 네비게이션 -->
+  <nav class="fixed bottom-0 left-0 right-0
+              border-t border-white/10
+              bg-slate-950/80 backdrop-blur-lg">
+
+    <div class="flex justify-center p-4">
+
+      <a
+        href="page1.html"
+        class="group flex items-center gap-2
+               rounded-full
+               bg-gradient-to-r from-yellow-300 to-amber-400
+               px-7 py-3
+               font-bold text-slate-900
+               shadow-lg shadow-yellow-500/20
+               transition duration-200
+               hover:-translate-y-1
+               hover:shadow-xl hover:shadow-yellow-500/30"
+      >
+        다음
+        <span class="transition-transform duration-200 group-hover:translate-x-1">
+          ▶
+        </span>
+      </a>
+
+    </div>
+
+  </nav>
+
 </body>
 </html>
