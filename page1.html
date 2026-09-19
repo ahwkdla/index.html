@@ -3,134 +3,226 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>자기소개 - 페이지 1</title>
-
+  <title>자기소개 - 첫 번째 이야기</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=EB+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    body[data-scene="sky"][data-weather="rain"] .weather-art { opacity: .46 !important; mix-blend-mode: multiply; background-image: repeating-linear-gradient(102deg, transparent 0 24px, rgba(38,93,145,.56) 25px 26px, transparent 27px 48px) !important; background-size: 96px 142px !important; animation: realistic-rain .62s linear infinite !important; }
+    body[data-scene="sky"][data-weather="rain"] .rain-glass { opacity: .28; }
+    @keyframes realistic-rain { from { background-position: 0 -142px; } to { background-position: 26px 0; } }
+  </style>
+  <style>
+    :root { --aurora-x: 50vw; --aurora-y: 45vh; }
+    * { box-sizing: border-box; }
+    body {
+      position: relative;
+      overflow-x: hidden;
+      background: radial-gradient(circle at 50% 18%, rgba(76, 101, 177, 0.38), transparent 32%), radial-gradient(circle at 15% 80%, rgba(25, 104, 121, 0.2), transparent 30%), #080d22;
+      font-family: "EB Garamond", Georgia, serif;
+    }
+    body::before, body::after { position: fixed; inset: 0; z-index: 0; pointer-events: none; content: ""; }
+    body::before {
+      opacity: 0.75;
+      background-image: radial-gradient(circle, rgba(255, 246, 194, 0.9) 0 1px, transparent 1.5px), radial-gradient(circle, rgba(151, 221, 255, 0.65) 0 1px, transparent 1.5px);
+      background-position: 10px 18px, 42px 64px;
+      background-size: 92px 88px, 137px 121px;
+      animation: star-drift 18s linear infinite;
+    }
+    body::after { background: radial-gradient(circle 190px at var(--aurora-x) var(--aurora-y), rgba(103, 244, 221, 0.22), transparent 70%); filter: blur(12px); }
+    .castle-backdrop { position: fixed; right: 0; bottom: 4.5rem; left: 0; z-index: 0; height: min(48vh, 430px); opacity: 0.62; background: radial-gradient(ellipse at 50% 100%, rgba(55, 83, 139, 0.55), transparent 58%), linear-gradient(to top, #080d22 2%, rgba(8, 13, 34, 0.7) 42%, transparent 100%); pointer-events: none; }
+    .castle-backdrop::before, .castle-backdrop::after { position: absolute; right: 12%; bottom: 0; left: 12%; content: ""; clip-path: polygon(0 100%, 0 54%, 6% 54%, 6% 40%, 11% 40%, 11% 54%, 17% 54%, 17% 28%, 22% 28%, 22% 44%, 28% 44%, 28% 18%, 34% 18%, 34% 45%, 41% 45%, 41% 7%, 47% 7%, 47% 42%, 53% 42%, 53% 22%, 59% 22%, 59% 45%, 66% 45%, 66% 13%, 72% 13%, 72% 44%, 78% 44%, 78% 32%, 84% 32%, 84% 53%, 90% 53%, 90% 39%, 95% 39%, 95% 54%, 100% 54%, 100% 100%); }
+    .castle-backdrop::before { height: 82%; background: linear-gradient(90deg, #060918, #121c3b 48%, #060918); box-shadow: 0 -12px 36px rgba(94, 221, 226, 0.32); }
+    .castle-backdrop::after { bottom: 4%; height: 62%; opacity: 0.58; background-image: radial-gradient(circle, #f8dc87 0 2px, transparent 2.8px); background-position: 14px 16px; background-size: 46px 54px; }
+    .page-content { position: relative; z-index: 1; }
+    .magic-title { font-family: "Cinzel", Georgia, serif; text-shadow: 0 0 22px rgba(183, 231, 255, 0.38); }
+    .magic-button { position: relative; overflow: hidden; border: 1px solid rgba(248, 220, 135, 0.88); border-radius: 0.2rem; background: linear-gradient(135deg, #34244e, #160f2f 56%, #0d1738); color: #f8dc87; font-family: "Cinzel", Georgia, serif; letter-spacing: 0.12em; box-shadow: 0 0 0 3px rgba(248, 220, 135, 0.12), 0 12px 30px rgba(0, 0, 0, 0.35), inset 0 0 18px rgba(102, 217, 216, 0.12); }
+    .magic-button::before { position: absolute; top: 0; bottom: 0; left: -80%; width: 55%; content: ""; transform: skewX(-20deg); background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent); transition: left 500ms ease; }
+    .magic-button:hover::before, .magic-button:focus-visible::before { left: 130%; }
+    .magic-button:hover, .magic-button:focus-visible { border-color: #fff0b0; color: #fff0b0; box-shadow: 0 0 0 3px rgba(248, 220, 135, 0.18), 0 0 26px rgba(106, 230, 222, 0.28), inset 0 0 22px rgba(102, 217, 216, 0.2); }
+    @keyframes star-drift { from { transform: translateY(0); } to { transform: translateY(-88px); } }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; } }
+  </style>
+  <style>
+    body::after { background: radial-gradient(circle 30px at var(--aurora-x) var(--aurora-y), rgba(147, 255, 235, 0.62) 0, rgba(103, 244, 221, 0.18) 32%, transparent 72%); filter: blur(4px); }
+    .castle-backdrop { height: min(58vh, 520px); opacity: 0.98; background-image: radial-gradient(ellipse at 50% 4%, rgba(93,218,202,.16), transparent 38%), radial-gradient(ellipse at 50% 100%, rgba(55,83,139,.55), transparent 58%), linear-gradient(to top, #080d22 2%, rgba(8,13,34,.7) 42%, transparent 100%); }
+    .castle-backdrop::before { background: linear-gradient(90deg, #030510, #263b69 48%, #030510); box-shadow: 0 -18px 46px rgba(94, 221, 226, 0.48), 0 0 32px rgba(30, 45, 91, 0.8); }
+    .castle-backdrop::after { display: none; }
+    .aurora-band { position: fixed; top: 12%; left: -18%; z-index: 0; width: 136%; height: 25%; opacity: 0.4; transform: rotate(-8deg); background: linear-gradient(100deg, transparent 8%, rgba(71, 244, 220, 0.05) 28%, rgba(88, 232, 191, 0.42) 46%, rgba(105, 170, 255, 0.2) 59%, transparent 82%); filter: blur(28px); pointer-events: none; animation: aurora-flow 12s ease-in-out infinite alternate; }
+    .cursor-trail { position: fixed; top: 0; left: 0; z-index: 3; width: 7px; height: 7px; border-radius: 999px; background: #a7fff0; box-shadow: 0 0 8px 2px rgba(103, 244, 221, 0.7), 0 0 16px rgba(122, 173, 255, 0.38); opacity: 0; pointer-events: none; transform: translate(-50%, -50%); display: none; }
+    .cursor-canvas { position: fixed; inset: 0; z-index: 3; width: 100%; height: 100%; pointer-events: none; }
+    .cursor-trail:nth-of-type(2) { width: 6px; height: 6px; opacity: 0.72; }
+    .cursor-trail:nth-of-type(3) { width: 5px; height: 5px; opacity: 0.54; }
+    .cursor-trail:nth-of-type(4) { width: 4px; height: 4px; opacity: 0.38; }
+    .cursor-trail:nth-of-type(5) { width: 3px; height: 3px; opacity: 0.24; }
+    .cursor-trail:nth-of-type(6) { width: 2px; height: 2px; opacity: 0.14; }
+    .wizard-flight { position: fixed; z-index: 2; font-size: 1.15rem; line-height: 1; filter: drop-shadow(0 0 7px rgba(147, 255, 235, 0.55)); pointer-events: none; user-select: none; }
+    .wizard-flight { display: none; }
+    .shooting-star { position: fixed; z-index: 2; width: 4px; height: 4px; border-radius: 999px; background: #fff8cf; box-shadow: 0 0 6px 2px rgba(255,248,207,.85); pointer-events: none; }
+    .shooting-star::after { position: absolute; top: 1px; left: 2px; width: 55px; height: 1px; content: ""; transform: rotate(-35deg); transform-origin: left center; background: linear-gradient(90deg, #fff8cf, rgba(167,255,240,.45), transparent); filter: blur(.45px); }
+    .page1-content { transform: scale(.9); transform-origin: center center; }
+    .castle-rubble { position: absolute; top: 22%; z-index: 2; width: 26px; height: 34px; background: linear-gradient(135deg, #2c4270, #060918); clip-path: polygon(8% 0, 100% 12%, 82% 100%, 0 78%); box-shadow: 0 0 12px rgba(94,221,226,.45); pointer-events: none; }
+    .castle-damaged::before { animation: castle-shake 420ms ease-out; }
+    .castle-backdrop::before { opacity: var(--castle-opacity, 1); transition: opacity 700ms ease, transform 700ms ease; }
+    .castle-gone::before { opacity: 0; transform: translateY(70px) scaleY(.7); }
+    .castle-rubble { position: fixed; top: auto; width: 28px; height: 38px; background: linear-gradient(135deg, #3a5382, #080b19); box-shadow: 0 0 12px rgba(94,221,226,.45); }
+    .castle-impact { position: fixed; z-index: 3; width: 16px; height: 16px; border: 2px solid #ffe9a3; border-radius: 999px; box-shadow: 0 0 12px #8ffff0, inset 0 0 8px #fff8cf; pointer-events: none; animation: impact-burst 650ms ease-out forwards; }
+    .edge-light { position: fixed; inset: 0; z-index: 0; pointer-events: none; box-shadow: inset 115px 0 135px rgba(35,91,145,.18), inset -115px 0 135px rgba(34,130,143,.18); }
+    @keyframes castle-shake { 0%,100% { transform: translateX(0); } 25% { transform: translateX(-4px) rotate(-1deg); } 50% { transform: translateX(4px) rotate(1deg); } 75% { transform: translateX(-2px); } }
+    @keyframes impact-burst { 0% { transform: translate(-50%,-50%) scale(.3); opacity: 1; } 100% { transform: translate(-50%,-50%) scale(4); opacity: 0; } }
+    @keyframes aurora-flow { from { margin-left: -3%; opacity: 0.28; } to { margin-left: 7%; opacity: 0.48; } }
+    .theme-controls { position: fixed; top: 16px; right: 16px; z-index: 6; width: 184px; padding: 12px; border: 1px solid rgba(248,220,135,.35); border-radius: 12px; background: rgba(8,13,34,.78); box-shadow: 0 10px 28px rgba(0,0,0,.28); backdrop-filter: blur(12px); }
+    .theme-controls label { display: block; margin-bottom: 7px; color: rgba(236,248,255,.82); font-family: "Cinzel", Georgia, serif; font-size: 11px; letter-spacing: .08em; }
+    .theme-controls input[type="range"] { width: 100%; accent-color: hsl(var(--theme-hue,205),80%,70%); }
+    .theme-controls select, .theme-controls button { width: 100%; border: 1px solid rgba(151,255,235,.24); border-radius: 6px; background: rgba(20,31,65,.9); color: #f8dc87; font-family: "EB Garamond", Georgia, serif; font-size: 14px; }
+    .theme-controls select { padding: 4px 6px; } .theme-controls button { margin-bottom: 9px; padding: 5px 6px; cursor: pointer; }
+    .theme-controls .weather-control { margin-top: 8px; } .theme-controls .weather-control[hidden] { display: none; }
+    body[data-scene="sea"] { background: radial-gradient(circle at 50% 25%, rgba(55,180,205,.48), transparent 38%), linear-gradient(to bottom, #071c43, #063c57 54%, #041c34); }
+    body[data-scene="mountain"] { background: radial-gradient(circle at 50% 15%, rgba(127,103,181,.35), transparent 36%), linear-gradient(to bottom, #11183b, #25355a 52%, #0b162b); }
+    body[data-scene="sky"] { background: linear-gradient(to bottom, #aeeaff 0%, #6cb9e8 52%, #dff7ff 100%); }
+    body.rainbow-mode { background: linear-gradient(120deg, #ee5b78, #f6c453, #74d79c, #59c4ef, #9e76df, #ee5b78); background-size: 300% 300%; animation: rainbow-background 16s ease infinite; }
+    body.rainbow-mode[data-scene="sky"] .scene-art { inset: 0; opacity: .82; background: linear-gradient(120deg, rgba(239,91,120,.85), rgba(246,196,83,.78), rgba(116,215,156,.78), rgba(89,196,239,.78), rgba(158,118,223,.82), rgba(239,91,120,.85)); background-size: 300% 300%; filter: blur(2px); animation: rainbow-background 16s ease infinite; }
+    .scene-art { position: fixed; inset: 0; z-index: 0; pointer-events: none; opacity: .62; }
+    body[data-scene="sky"] .scene-art { background: radial-gradient(ellipse at 18% 28%, rgba(255,255,255,.42) 0 5%, transparent 15%), radial-gradient(ellipse at 76% 22%, rgba(255,255,255,.32) 0 6%, transparent 17%), radial-gradient(ellipse at 52% 38%, rgba(206,244,255,.22) 0 7%, transparent 19%); filter: blur(8px); }
+    body[data-scene="sea"] .scene-art { top: 46%; background: repeating-radial-gradient(ellipse at 50% 100%, transparent 0 24px, rgba(116,232,234,.25) 26px 29px, transparent 31px 48px); opacity: .48; }
+    body[data-scene="mountain"] .scene-art { top: 38%; bottom: 4.5rem; background: linear-gradient(145deg, transparent 0 20%, rgba(42,76,111,.8) 21% 44%, transparent 45%), linear-gradient(35deg, transparent 0 34%, rgba(22,48,72,.9) 35% 61%, transparent 62%); clip-path: polygon(0 44%,18% 20%,31% 39%,46% 8%,62% 36%,77% 16%,100% 42%,100% 100%,0 100%); opacity: .75; }
+    body[data-scene="mountain"] .scene-art::after { position: absolute; right: 0; bottom: 0; left: 0; height: 42%; content: ""; background: repeating-linear-gradient(72deg, #071525 0 13px, transparent 13px 28px); clip-path: polygon(0 100%,0 45%,5% 22%,10% 47%,16% 12%,22% 45%,28% 20%,34% 50%,41% 14%,48% 46%,55% 18%,62% 50%,70% 10%,78% 45%,86% 20%,93% 48%,100% 12%,100% 100%); }
+    @keyframes rainbow-background { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+    .weather-art { position: fixed; inset: 0; z-index: 0; pointer-events: none; } body[data-scene="sky"][data-weather="sun"] .weather-art::before { position: absolute; top: 12%; right: 16%; width: 92px; height: 92px; content: ""; border-radius: 50%; background: #fff3a6; box-shadow: 0 0 42px 16px rgba(255,226,117,.5); } body[data-scene="sky"][data-weather="rain"] .weather-art { opacity: .48; background: repeating-linear-gradient(108deg, transparent 0 18px, rgba(54,116,174,.28) 19px 20px, transparent 21px 34px); } body[data-scene="sky"][data-weather="snow"] .weather-art { opacity: .75; background-image: radial-gradient(circle, rgba(255,255,255,.9) 0 2px, transparent 2.5px), radial-gradient(circle, rgba(255,255,255,.75) 0 1.5px, transparent 2px); background-size: 72px 84px, 116px 128px; background-position: 12px 18px, 48px 64px; animation: snow-drift 12s linear infinite; } @keyframes snow-drift { to { background-position: 12px 102px, 48px 192px; } }
+  </style>
+  <style>
+    body[data-scene="sky"][data-weather="rain"] .weather-art { z-index: 0; opacity: .58; mix-blend-mode: multiply; background-image: repeating-linear-gradient(105deg, transparent 0 17px, rgba(44,103,157,.42) 18px 19px, transparent 20px 36px), repeating-linear-gradient(105deg, transparent 0 31px, rgba(255,255,255,.28) 32px 33px, transparent 34px 64px); background-size: 74px 106px, 118px 164px; animation: rain-fall .72s linear infinite; }
+    @keyframes rain-fall { from { background-position: 0 -106px, 22px -164px; } to { background-position: 0 0, 22px 0; } }
+  </style>
+  <style>
+    .rain-glass { position: fixed; inset: 0; z-index: 2; display: none; pointer-events: none; opacity: .55; background-image: radial-gradient(ellipse at 12% 22%, rgba(255,255,255,.58) 0 2px, rgba(151,215,238,.28) 3px, transparent 7px), radial-gradient(ellipse at 64% 38%, rgba(255,255,255,.48) 0 1.5px, rgba(151,215,238,.24) 3px, transparent 6px), radial-gradient(ellipse at 87% 68%, rgba(255,255,255,.45) 0 2px, rgba(151,215,238,.22) 3px, transparent 8px); background-size: 290px 340px, 370px 420px, 260px 310px; animation: glass-rain-drift 3.8s linear infinite; }
+    body[data-scene="sky"][data-weather="rain"] .rain-glass { display: block; }
+    @keyframes glass-rain-drift { from { background-position: 0 -340px, 40px -420px, 80px -310px; } to { background-position: 0 0, 40px 0, 80px 0; } }
+  </style>
+  <style>.theme-controls.is-collapsed { width: 42px; height: 42px; padding: 6px; overflow: hidden; } .theme-toggle { width: 28px !important; height: 28px; margin: 0 0 8px !important; padding: 0 !important; font-family: sans-serif !important; font-size: 16px !important; line-height: 1; }</style>
 </head>
+<body class="min-h-screen text-white">
+  <aside class="theme-controls" aria-label="배경 테마 설정"><label for="hueRange">배경 색상</label><input id="hueRange" type="range" min="0" max="360" value="205" aria-label="배경 색상 선택"><button id="rainbowToggle" type="button">무지개 바탕</button><label for="sceneSelect">배경 버전</label><select id="sceneSelect" aria-label="배경 버전 선택"><option value="sky">하늘</option><option value="sea">바다</option><option value="mountain">산</option></select><label class="weather-control" for="weatherSelect">하늘 날씨<select id="weatherSelect" aria-label="하늘 날씨 선택"><option value="sun">태양</option><option value="rain">비</option><option value="snow">눈</option></select></label></aside>
+  <div class="scene-art" aria-hidden="true"></div>
+  <div class="weather-art" aria-hidden="true"></div>
+  <div class="rain-glass" aria-hidden="true"></div>
+  <div class="aurora-band" aria-hidden="true"></div>
+  <div class="edge-light" aria-hidden="true"></div>
+  <canvas class="cursor-canvas" aria-hidden="true"></canvas>
+  <span class="cursor-trail" aria-hidden="true"></span><span class="cursor-trail" aria-hidden="true"></span><span class="cursor-trail" aria-hidden="true"></span><span class="cursor-trail" aria-hidden="true"></span><span class="cursor-trail" aria-hidden="true"></span><span class="cursor-trail" aria-hidden="true"></span>
+  <main class="page-content flex min-h-screen items-center justify-center px-6 pb-28">
+    <section class="page1-content w-full max-w-lg text-center">
+      <p class="mb-3 text-sm font-semibold tracking-[0.3em] text-cyan-100/80 uppercase">ABOUT ME</p>
+      <h1 class="magic-title text-4xl font-extrabold tracking-tight text-amber-100 sm:text-5xl">나에 대해서</h1>
 
-<body class="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-indigo-950 text-white">
-
-  <!-- 메인 내용 -->
-  <main class="min-h-screen flex items-center justify-center px-6 pb-28">
-
-    <div class="w-full max-w-lg text-center">
-
-      <!-- 페이지 제목 -->
-      <p class="mb-3 text-sm font-semibold tracking-[0.3em] text-yellow-300">
-        ABOUT ME
-      </p>
-
-      <h1 class="text-4xl font-extrabold
-                 bg-gradient-to-r from-yellow-300 to-amber-500
-                 bg-clip-text text-transparent">
-        나에 대해서
-      </h1>
-
-      <!-- 이름 -->
-      <div class="mt-8 rounded-2xl border border-white/10
-                  bg-white/5 p-6 backdrop-blur-sm">
-
-        <h2 class="text-2xl font-bold text-yellow-300">
-          이름 : 이선우
-        </h2>
-
+      <div class="mt-8 rounded-2xl border border-amber-200/20 bg-slate-950/45 p-6 backdrop-blur-sm">
+        <h2 class="text-2xl font-bold text-amber-200">이름 : 이선우</h2>
       </div>
 
-      <!-- 취미 -->
-      <div class="mt-5 rounded-2xl border border-white/10
-                  bg-white/5 p-6 backdrop-blur-sm">
-
-        <p class="text-lg text-slate-300">
-          취미는
-          <span class="mx-1 rounded-md bg-red-400 px-2 py-1
-                       font-semibold text-slate-900">
-            게임 그림
-          </span>
-          이고
-        </p>
-
+      <div class="mt-5 rounded-2xl border border-cyan-100/15 bg-slate-950/45 p-6 backdrop-blur-sm">
+        <p class="text-lg text-slate-200">취미는 <span class="mx-1 rounded-md bg-rose-400/90 px-2 py-1 font-semibold text-slate-950">게임 그림</span> 이고</p>
       </div>
 
-      <!-- 좋아하는 것 -->
-      <div class="mt-5 rounded-2xl border border-white/10
-                  bg-white/5 p-6 backdrop-blur-sm">
-
-        <p class="text-lg text-slate-300">
-          좋아하는건
-        </p>
-
-        <div class="mt-3 flex justify-center gap-3">
-
-          <span class="rounded-full bg-red-500/20
-                       px-4 py-2 font-bold text-red-300">
-            ⚾ 야구
-          </span>
-
-          <span class="rounded-full bg-pink-500/20
-                       px-4 py-2 font-bold text-pink-300">
-            🎵 에스파
-          </span>
-
+      <div class="mt-5 rounded-2xl border border-cyan-100/15 bg-slate-950/45 p-6 backdrop-blur-sm">
+        <p class="text-lg text-slate-200">좋아하는건</p>
+        <div class="mt-3 flex flex-wrap justify-center gap-3">
+          <span class="rounded-full bg-red-500/20 px-4 py-2 font-bold text-red-200">⚾ 야구</span>
+          <span class="rounded-full bg-pink-500/20 px-4 py-2 font-bold text-pink-200">🎵 에스파</span>
         </div>
-
       </div>
 
-      <!-- 페이지 번호 -->
-      <p class="mt-8 text-sm text-slate-400">
-        <span class="font-semibold text-yellow-300">2</span>
-        / 4
-        <span class="mx-2">·</span>
-        페이지 1
-      </p>
-
-    </div>
-
+      <p class="mt-8 text-sm text-slate-300/80"><span class="font-semibold text-amber-200">2</span> / 4 <span class="mx-2">·</span> 페이지 1</p>
+    </section>
   </main>
-
-
-  <!-- 하단 네비게이션 -->
-  <nav class="fixed bottom-0 left-0 right-0
-              border-t border-white/10
-              bg-slate-950/80 backdrop-blur-lg">
-
-    <div class="flex justify-center gap-3 p-4">
-
-      <!-- 메인으로 -->
-      <a
-        href="index.html"
-        class="group flex items-center gap-2
-               rounded-full border border-white/10
-               bg-white/10 px-6 py-3
-               font-semibold text-white
-               transition duration-200
-               hover:-translate-y-1
-               hover:bg-white/20"
-      >
-        ◀ 메인
-      </a>
-
-      <!-- 다음 페이지 -->
-      <a
-        href="page2.html"
-        class="group flex items-center gap-2
-               rounded-full
-               bg-gradient-to-r from-yellow-300 to-amber-400
-               px-6 py-3
-               font-bold text-slate-900
-               shadow-lg shadow-yellow-500/20
-               transition duration-200
-               hover:-translate-y-1
-               hover:shadow-xl hover:shadow-yellow-500/30"
-      >
-        다음
-        <span class="transition-transform duration-200 group-hover:translate-x-1">
-          ▶
-        </span>
-      </a>
-
+  <nav class="page-content fixed bottom-0 left-0 right-0 border-t border-cyan-100/10 bg-[#080d22]/70 p-4 backdrop-blur-lg">
+    <div class="flex justify-center gap-3">
+      <a href="index.html" class="magic-button px-6 py-3 transition duration-300 hover:-translate-y-1">이전</a>
+      <a href="page2.html" class="magic-button px-6 py-3 transition duration-300 hover:-translate-y-1">다음 ✦</a>
     </div>
-
   </nav>
+  <script>
+    const root = document.documentElement;
+    const cursorTrail = [...document.querySelectorAll(".cursor-trail")];
+    const trailPoints = cursorTrail.map(() => ({ x: innerWidth / 2, y: innerHeight / 2 }));
+    const castleStateKey = "self-introduction-castle-state";
+    const themeStateKey = "self-introduction-theme-state";
+    const trailCanvas = document.querySelector(".cursor-canvas");
+    const trailContext = trailCanvas.getContext("2d");
+    let lastTrailUpdate = 0;
+    const hueRange = document.querySelector("#hueRange"), rainbowToggle = document.querySelector("#rainbowToggle"), sceneSelect = document.querySelector("#sceneSelect"), weatherSelect = document.querySelector("#weatherSelect"), weatherControl = document.querySelector(".weather-control"), savedTheme = JSON.parse(localStorage.getItem(themeStateKey) || '{"hue":205,"rainbow":false,"scene":"sky","weather":"sun"}');
+    hueRange.value = savedTheme.hue; sceneSelect.value = savedTheme.scene; weatherSelect.value = savedTheme.weather || "sun";
+    function applyTheme() { document.documentElement.style.setProperty("--theme-hue", hueRange.value); document.body.dataset.scene = sceneSelect.value; document.body.dataset.weather = weatherSelect.value; document.body.classList.toggle("rainbow-mode", savedTheme.rainbow); weatherControl.hidden = sceneSelect.value !== "sky"; rainbowToggle.textContent = savedTheme.rainbow ? "기본 바탕" : "무지개 바탕"; localStorage.setItem(themeStateKey, JSON.stringify({ hue: Number(hueRange.value), rainbow: savedTheme.rainbow, scene: sceneSelect.value, weather: weatherSelect.value })); }
+    hueRange.addEventListener("input", () => { savedTheme.hue = Number(hueRange.value); applyTheme(); }); sceneSelect.addEventListener("change", () => { savedTheme.scene = sceneSelect.value; applyTheme(); }); weatherSelect.addEventListener("change", () => { savedTheme.weather = weatherSelect.value; applyTheme(); }); rainbowToggle.addEventListener("click", () => { savedTheme.rainbow = !savedTheme.rainbow; applyTheme(); }); applyTheme();
+    function resizeTrailCanvas() { const ratio = devicePixelRatio || 1; trailCanvas.width = innerWidth * ratio; trailCanvas.height = innerHeight * ratio; trailContext.setTransform(ratio, 0, 0, ratio, 0, 0); }
+    function drawCursorLine() { trailContext.clearRect(0, 0, innerWidth, innerHeight); trailContext.beginPath(); trailContext.moveTo(trailPoints[0].x, trailPoints[0].y); trailPoints.slice(1).forEach((point) => trailContext.lineTo(point.x, point.y)); trailContext.strokeStyle = "rgba(151,255,235,.72)"; trailContext.lineWidth = 2; trailContext.lineCap = "round"; trailContext.lineJoin = "round"; trailContext.shadowColor = "rgba(91,235,219,.72)"; trailContext.shadowBlur = 7; trailContext.stroke(); requestAnimationFrame(drawCursorLine); }
+    resizeTrailCanvas(); window.addEventListener("resize", resizeTrailCanvas); drawCursorLine();
 
+    function restoreCastleState() {
+      const castle = document.querySelector(".castle-backdrop");
+      if (!castle) return;
+      const state = JSON.parse(localStorage.getItem(castleStateKey) || '{"health":100,"rubbleCount":0}');
+      castle.dataset.health = state.health;
+      castle.style.setProperty("--castle-opacity", state.health / 100);
+      if (state.health <= 0) castle.classList.add("castle-gone");
+      state.rubbleCount = 0;
+      localStorage.setItem(castleStateKey, JSON.stringify(state));
+    }
+
+    restoreCastleState();
+    window.addEventListener("pointermove", (event) => {
+      root.style.setProperty("--aurora-x", `${event.clientX}px`);
+      root.style.setProperty("--aurora-y", `${event.clientY}px`);
+      const now = performance.now();
+      if (now - lastTrailUpdate < 24) return;
+      lastTrailUpdate = now;
+      trailPoints[0] = { x: event.clientX, y: event.clientY };
+      cursorTrail.forEach((spark, index) => {
+        if (index > 0) { trailPoints[index].x += (trailPoints[index - 1].x - trailPoints[index].x) * 0.34; trailPoints[index].y += (trailPoints[index - 1].y - trailPoints[index].y) * 0.34; }
+        spark.style.transform = `translate(${trailPoints[index].x}px, ${trailPoints[index].y}px) translate(-50%, -50%)`;
+      });
+    });
+    function animateCursorTrail() {
+      cursorTrail.forEach((spark, index) => {
+        if (index > 0) { trailPoints[index].x += (trailPoints[index - 1].x - trailPoints[index].x) * 0.2; trailPoints[index].y += (trailPoints[index - 1].y - trailPoints[index].y) * 0.2; }
+        spark.style.transform = `translate(${trailPoints[index].x}px, ${trailPoints[index].y}px) translate(-50%, -50%)`;
+      });
+      requestAnimationFrame(animateCursorTrail);
+    }
+    function sendShootingStar() {
+      if (document.body.dataset.scene !== "mountain") return;
+      const star = document.createElement("span"); star.className = "shooting-star"; star.style.left = `${45 + Math.random() * 55}vw`; star.style.top = `${-5 + Math.random() * 38}vh`; document.body.appendChild(star);
+      if (Math.random() < 0.5) damageCastle();
+      const duration = 1200 + Math.random() * 700;
+      star.animate([{ transform: "translate(0, 0) rotate(35deg) scale(0.5)", opacity: 0 }, { transform: "translate(-18vw, 22vh) rotate(35deg) scale(1)", opacity: 1, offset: 0.24 }, { transform: "translate(-55vw, 70vh) rotate(35deg) scale(0.7)", opacity: 0 }], { duration, easing: "ease-in" });
+      window.setTimeout(() => star.remove(), duration);
+    }
+    animateCursorTrail();
+    function damageCastle() {
+      const castle = document.querySelector(".castle-backdrop");
+      if (!castle) return;
+      if (Number(castle.dataset.health || 100) <= 0) return;
+      const castleHealth = Math.max(0, Number(castle.dataset.health || 100) - 5);
+      castle.dataset.health = castleHealth;
+      castle.style.setProperty("--castle-opacity", castleHealth / 100);
+      if (castleHealth <= 0) castle.classList.add("castle-gone");
+      const state = JSON.parse(localStorage.getItem(castleStateKey) || '{"health":100,"rubbleCount":0}');
+      state.health = castleHealth;
+      state.rubbleCount = 0;
+      localStorage.setItem(castleStateKey, JSON.stringify(state));
+      const impact = document.createElement("span"); impact.className = "castle-impact"; impact.style.left = `${35 + Math.random() * 30}vw`; impact.style.top = `${35 + Math.random() * 22}vh`; document.body.appendChild(impact);
+      castle.classList.add("castle-damaged");
+      for (let piece = 0; piece < 3; piece += 1) { const rubble = document.createElement("span"); rubble.className = "castle-rubble"; const startX = 24 + Math.random() * 52; const startY = 25 + Math.random() * 30; rubble.style.left = `${startX}vw`; rubble.style.top = `${startY}vh`; document.body.appendChild(rubble); const fallX = Math.random() * 150 - 75; const fallY = innerHeight - innerHeight * (startY / 100) - 28; rubble.animate([{ transform: "translate(0,0) rotate(0deg)", opacity: 1 }, { transform: `translate(${fallX}px,${fallY}px) rotate(${180 + Math.random() * 180}deg)`, opacity: .95 }], { duration: 1250 + piece * 90, easing: "cubic-bezier(.25,.7,.35,1)", fill: "forwards" }); window.setTimeout(() => rubble.remove(), 1500 + piece * 90); }
+      window.setTimeout(() => { impact.remove(); castle.classList.remove("castle-damaged"); }, 700);
+    }
+    window.setInterval(sendShootingStar, 3500);
+  </script>
+  <script>
+    const themeControls = document.querySelector(".theme-controls");
+    const themeToggle = document.createElement("button");
+    themeToggle.className = "theme-toggle"; themeToggle.type = "button"; themeToggle.textContent = "▲"; themeToggle.setAttribute("aria-label", "테마 설정 접기"); themeControls.prepend(themeToggle);
+    themeToggle.addEventListener("click", () => { themeControls.classList.toggle("is-collapsed"); themeToggle.textContent = themeControls.classList.contains("is-collapsed") ? "▼" : "▲"; });
+  </script>
+  <style>body[data-scene="sky"][data-weather="snow"] .weather-art { animation-duration: 5s !important; }</style>
 </body>
 </html>
